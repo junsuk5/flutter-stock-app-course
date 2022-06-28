@@ -1,4 +1,6 @@
 import 'package:stock_app/data/source/local/company_listing_entity.dart';
+import 'package:stock_app/data/source/remote/dto/company_info_dto.dart';
+import 'package:stock_app/domain/model/company_info.dart';
 import 'package:stock_app/domain/model/company_listing.dart';
 
 extension ToCompanyListing on CompanyListingEntity {
@@ -17,6 +19,18 @@ extension ToCompanyListingEntity on CompanyListing {
       symbol: symbol,
       name: name,
       exchange: exchange,
+    );
+  }
+}
+
+extension ToCompanyInfo on CompanyInfoDto {
+  CompanyInfo toCompanyInfo() {
+    return CompanyInfo(
+      symbol: symbol ?? '',
+      description: description ?? '',
+      name: name ?? '',
+      country: country ?? '',
+      industry: industry ?? '',
     );
   }
 }

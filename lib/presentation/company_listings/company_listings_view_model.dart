@@ -8,7 +8,7 @@ import 'package:stock_app/presentation/company_listings/company_listings_state.d
 class CompanyListingsViewModel with ChangeNotifier {
   final StockRepository _repository;
 
-  var _state = CompanyListingsState();
+  var _state = const CompanyListingsState();
 
   Timer? _debounce;
 
@@ -48,7 +48,7 @@ class CompanyListingsViewModel with ChangeNotifier {
       },
       error: (e) {
         // TODO : 에러처리
-        print('리모트 에러 : ' + e.toString());
+        print('리모트 에러 : $e');
       },
     );
 

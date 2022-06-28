@@ -76,13 +76,15 @@ class CompanyInfoScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          if (state.stockInfos.isNotEmpty) Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: StockChart(
+          if (state.stockInfos.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: StockChart(
                 infos: state.stockInfos,
-              color: Theme.of(context).colorScheme.primary,
+                graphColor: Theme.of(context).colorScheme.primary,
+                textColor: Theme.of(context).colorScheme.onSurface,
+              ),
             ),
-          ),
         ],
       ),
     );
